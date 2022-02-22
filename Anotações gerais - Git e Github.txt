@@ -1,0 +1,47 @@
+CONTROLE DE VERSÃO ou VCS (Version Control System) --> É o que o Git faz. Vários programadores estão conectados em um único servidor que controla/gerencia as várias
+versões que cada um faz ao modificar os arquivos. Se você quer fazer uma modificação e seu amigo já fez uma modificação, você deve baixar a nova versão antes. Não é
+só o Git que faz isso, tem o CVS, SVN e Mercurial. Ele nos deixa organizar o trabalho em equipe, mantendo as alterações nos arquivos em um servidor específico para
+isso. Ele permite, também, o armazenamento e acesso a um histórico de modificações que pode ser visualizada e restaurada a qualquer instante.
+
+COMANDOS NO TERMINAL DO GIT USANDO GITBASH
+dir (Windows) e ls (Linux e Mac) --> Mostram as pastas.
+git --version --> mostra a versão do Git instalado (se atente ao espaço entre git e os 2 menos).
+cd (e mais o endereço da pasta) --> use isso para logo a seguir usar o ls que mostrará as pastas dentro da pasta definida no cd. Você define o diretório. Se o caminho
+da sua pasta possuir espaços, é preciso colocá-lo entre aspas.
+git init --> inicializa um repositório (a partir daí você pode acessar o histórico de modificações). Pode ou não aparecer (master).
+git status --> mostra algumas informações (branch, commit, (un)tracked files).
+git config --local user.name "Seu nome aqui" -->      Isso precisa ser feito, para que o git armazene corretamente os dados do autor de cada uma das alterações no 
+git config --local user.email "seu@email.aqui" -->    código. Eles precisam estar na pasta do repositório git.
+git config --global --> para modificar as configurações para toda a máquina (computador).
+Para mais detalhes e outras configurações possíveis (até algumas mais avançadas), você pode conferir este link:
+https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration
+OBS: Não estou conseguindo colocar / no terminal do git. Uma solução é copiar a barra e quando colar usar Shift + Insert, pois Ctrl + V não funciona.
+git add . --> ele adiciona (passar a monitorar) todos os arquivos da pasta atual. Se for um arquivo específico é só colocar git add arquivo (sem ponto final).
+clear --> limpar a tela do terminal.
+OBS: Commit é um checkpoint, onde indica modificações nos arquivos.
+git commit -m "Criando arquivos index.html com lista de cursos" --> criando mensagem de commit para descrever as modificações.
+git log --> para ver o histórico. Ccada commit tem seu hash único, branch ou "ramo" (o código está no local HEAD e estamos num ramo denominado master).
+git log --oneline --> histórico resumido.
+git log -p --> histórico mais detalhado (com + adição e substituição ou subtração -).
+git log --pretty="format:%H" --> só mostra o hash.
+git log --pretty="format:%h %s" --> mostra hash e a mensagem do commit.
+git log --pretty="format:%h %s %ae" --> hash, mensagem do commit e o e-mail do autor. Para saber mais opções, acesse: http://devhints.io/git-log ou use git log --help.
+
+PARA SABER MAIS: GIT STATUS
+Ao executar o comando git status, recebemos algumas informações que talvez não estejam tão claras, principalmente quando nos deparamos com termos como HEAD, working 
+tree, index, etc.
+
+Apenas para esclarecer um pouco, visto que entenderemos melhor o funcionamento do Git durante o treinamento, seguem algumas definições interessantes:
+
+HEAD: Estado atual do nosso código, ou seja, onde o Git os colocou
+Working tree: Local onde os arquivos realmente estão sendo armazenados e editados
+index: Local onde o Git armazena o que será commitado, ou seja, o local entre a working tree e o repositório Git em si.
+Além disso, os possíveis estados dos nossos arquivos são explicados com detalhes neste link: 
+<https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Gravando-Altera%C3%A7%C3%B5es-em-Seu-Reposit%C3%B3rio>.
+
+QUANDO COMMITAR?
+Devemos gerar um commit sempre que a nossa base de código está em um estado do qual gostaríamos de nos lembrar. Nunca devemos ter commits de códigos que não funcionam,
+mas também não é interessante deixar para commitar apenas no final de uma feature.
+Essa pode ser uma discussão sem fim e cada empresa ou equipe pode seguir uma estratégia diferente. Estude sobre o assunto, entenda o que faz mais sentido para você e 
+sua equipe e seja feliz!
+
